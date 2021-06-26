@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: rgb(207, 207, 207);
+        }
+    </style>
+</head>
+<body>
+    <p>数组元素添加以及逆序排列</p>
+    <script>
+        var fruits=["Banana","Orange","Apple","Mango"];
+        fruits.push("Lemon","Pinapple");
+        fruits.sort();
+        fruits.reverse();
+        document.write("<div>"+"<ul>");
+        for(var n=0;n<fruits.length;n++){
+            document.write("<li>"+fruits[n]+"</li>");
+        }
+        document.write("</ul>"+"</div>");
+    </script>
+    <p>
+        sort array [40,100,1,5,25,10]
+    </p>
+    <button onclick="sort1()">sort</button>
+    <div id="sort">
+
+    </div>
+    <script>
+
+        var number=[40,100,1,5,25,10];
+
+        function sort1(){
+            number.sort(function(a,b){ return a-b});
+            document.getElementById("sort").innerHTML=number;
+        }
+
+    </script>
+
+    <p>按年份排序{type:"Volvo",year:2016},{type:"Saab",year:2001},{type:"BMW",year:2016}</p>
+    <button onclick="sort2()">sort</button>
+    <div id="车">
+
+    </div>
+    <script>
+
+        var car=[{type:"Volvo",year:2016},
+        {type:"Saab",year:2001},
+        {type:"BMW",year:2016}];
+
+        function sort2(){
+            car.sort(function(a,b){return a.year-b.year});
+            var x=car[0].type+":"+car[0].year+"<br>"+
+            car[1].type+":"+car[1].year+"<br>"+
+            car[2].type+":"+car[2].year;
+            document.getElementById("车").innerHTML=x;  
+        }
+    </script>
+
+    <p>输出元素与索引值</p>
+    <button onclick="output()">Output</button>
+    <div id="shuchu">
+
+    </div>
+
+    <script>
+        var array=[4,9,16,25];
+        var y="index"+ array.indexOf(4) + ":"+array[0] + "</br>"+
+        "index"+ array.indexOf(9) + ":"+array[1] + "</br>"+
+        "index"+ array.indexOf(16) + ":"+array[2] + "</br>"+
+        "index"+ array.indexOf(25) + ":"+array[3] + "</br>";
+
+        function output(){
+            document.getElementById("shuchu").innerHTML=y;
+        }
+    </script>
+</body>
+</html>
+
